@@ -1,0 +1,479 @@
+
+<html lang="es">
+  <head>
+    <title>Tu hogar - Portal del Sol</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="tu-hogar/fonts/fonts.css"/>
+    <link rel="stylesheet" href="css/bootstrap/custom.css"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+      #nav01 .nav-link:hover {
+          font-weight: bold !important;
+          color: #916e49 !important;
+      }
+      /* Responsive styles */
+      @media (max-width: 991px) {
+          #nav01 .navbar-nav {
+              position: static !important;
+              left: auto !important;
+              transform: none !important;
+              text-align: center;
+              padding: 1rem 0;
+          }
+          .navbar-brand img {
+              max-width: 180px;
+          }
+      }
+      @media (max-width: 767px) {
+          .navbar-brand img {
+              max-width: 160px;
+          }
+          .banner-hero h1 {
+              font-size: 2.5rem !important;
+          }
+          .banner-hero p {
+              font-size: 1rem !important;
+          }
+          .section-models > div {
+              margin-bottom: 1.5rem !important;
+          }
+          .btn-sm {
+              font-size: 0.875rem;
+              padding: 0.5rem 1rem;
+          }
+          /* Aumentar márgenes generales en móviles */
+          .container {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+          }
+          section {
+              padding-left: 1rem;
+              padding-right: 1rem;
+          }
+          /* Estilos para el carousel en móvil */
+          .detalles-section .carousel-item img {
+              border-radius: 8px;
+          }
+          .detalles-section .carousel-control-prev,
+          .detalles-section .carousel-control-next {
+              width: 40px;
+              height: 40px;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: rgba(0, 0, 0, 0.3);
+              border-radius: 50%;
+              opacity: 0.8;
+          }
+          .detalles-section .carousel-control-prev {
+              left: 10px;
+          }
+          .detalles-section .carousel-control-next {
+              right: 10px;
+          }
+          .detalles-section .carousel-control-prev:hover,
+          .detalles-section .carousel-control-next:hover {
+              opacity: 1;
+          }
+      }
+      @media (max-width: 575px) {
+          .banner-hero h1 {
+              font-size: 2rem !important;
+          }
+          .banner-hero p {
+              font-size: 0.9rem !important;
+          }
+          .display-4 {
+              font-size: 1.5rem !important;
+          }
+          .display-3 {
+              font-size: 1.25rem !important;
+          }
+          .form-control, .btn {
+              font-size: 0.875rem;
+          }
+      }
+      @media (max-width: 991px) {
+          .ps-10 {
+              padding-left: 0 !important;
+          }
+          /* Mostrar siempre la imagen hovered en móviles */
+          .img-hovered {
+              opacity: 1 !important;
+              position: relative !important;
+          }
+          .img-hover {
+              position: relative;
+          }
+      }
+      /* Asegurar que el footer se muestre en móviles */
+      section:last-of-type {
+          display: block !important;
+      }
+      @media (max-width: 767px) {
+          section:last-of-type {
+              display: block !important;
+              visibility: visible !important;
+          }
+          body {
+              padding-bottom: 2rem !important;
+          }
+          html {
+              overflow-x: hidden;
+          }
+          .navbar-menu img {
+              display: block !important;
+              visibility: visible !important;
+              opacity: 1 !important;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo-4.svg" alt="" width="140"/></a>
+          <button class="d-lg-none navbar-burger btn p-0 rounded-pill" style="border: none;" type="button" aria-expanded="false">
+            <svg class="text-secondary" width="51" height="51" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+              <path d="M37 32H19M37 24H19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse position-relative" id="nav01">
+            <ul class="navbar-nav position-absolute top-50 d-none d-lg-flex" style="left: 60%; transform: translateY(-50%);">
+              <li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-none navbar-menu position-fixed top-0 start-0 bottom-0 w-75 mw-xs" style="z-index: 9999;">
+          <div class="navbar-close navbar-backdrop position-fixed top-0 start-0 end-0 bottom-0 bg-dark" style="opacity: 75%; z-index: 9998;"></div>
+          <nav class="position-relative h-100 w-100 d-flex flex-column py-8 px-4 bg-white overflow-auto" style="z-index: 10000;">
+            <div class="d-flex align-items-center justify-content-end mb-4"><a class="navbar-close" href="#" style="cursor: pointer;">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 18L18 6M6 6L18 18" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></a></div>
+            <div class="w-100 mb-6 text-center" style="padding: 2rem 0;"><a class="d-block text-decoration-none" href="index.html"><img src="images/logo-4.svg" alt="Logo Portal del Sol" style="max-width: 140px; width: 100%; height: auto; display: inline-block !important; visibility: visible !important; opacity: 1 !important;"/></a></div>
+            <div class="flex-grow-1">
+              <ul class="nav flex-column list-unstyled">
+                <li class="nav-item mb-4"><a class="nav-link text-dark fs-5 fw-semibold" href="#modelos" onclick="document.querySelector('.navbar-menu').classList.add('d-none');">Modelos</a></li>
+                <li class="nav-item"><a class="nav-link text-dark fs-5 fw-semibold" href="#contacto" onclick="document.querySelector('.navbar-menu').classList.add('d-none');">Contacto</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </nav>
+      <section class="py-12 py-md-16 py-lg-24 overflow-hidden" id="modelos">
+        <div class="mw-md mw-lg-xl mx-auto mb-20 text-center">
+          <h3 class="font-heading mb-4">Nuevos modelos</h3>
+          <p class="text-light-dark mb-0">Con cuatro modelos versátiles, donde la ubicación, el diseño y la calidad se unen para que vivas a tu manera.</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+          <div class="bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px; min-width: 260px;">
+            <div class="img-hover mb-6"><img class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-01.png" alt=""/><img class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-01.png" alt=""/></div>
+            <h5 class="text-center mb-0 display-4 fw-bold">Modelo 01</h5>
+            <!-- a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/casalibertador2online/index.htm" target="_blank") Tour virtual--><a class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Calle_Pública_2171-73.pdf" target="_blank">Más info</a>
+          </div>
+          <div class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px">
+            <div class="img-hover mb-6"><img class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-02.png" alt=""/><img class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-02.png" alt=""/></div>
+            <h5 class="text-center mb-0 display-4 fw-bold">Modelo 02</h5>
+            <!--a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/casalibertador2online/index.htm" target="_blank") Tour virtual--><a class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Calle_Pública_ 1734-40.pdf" target="_blank">Más info</a>
+          </div>
+          <div class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px">
+            <div class="img-hover mb-6"><img class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-03.png" alt=""/><img class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-03.png" alt=""/></div>
+            <h5 class="text-center mb-0 display-4 fw-bold">Modelo 03</h5><a class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/casalibertador2onlinetour/index.htm" target="_blank">Tour virtual</a><a class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Fanny_Jacovsky_3642-54.pdf" target="_blank">Más info</a>
+          </div>
+          <div class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px">
+            <div class="img-hover mb-6"><img class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-04.png" alt=""/><img class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-04.png" alt=""/></div>
+            <h5 class="text-center mb-0 display-4 fw-bold">Modelo 04</h5>
+            <!--a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/casalibertador2online/index.htm" target="_blank") Tour virtual--><a class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_José_Lencinas_220-24.pdf" target="_blank">Más info                     </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 py-md-16 py-lg-24">
+        <div class="container">
+          <div class="mw-5xl mx-auto">
+            <div class="text-center mb-24">
+              <h3 class="font-heading text-center mb-4">Tu hogar, tu estilo</h3>
+              <p class="text-light-dark mb-0">Cuatro modelos para que encuentres el hogar que realmente se adapta a vos.</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 mb-12 mb-lg-24">
+                <div class="ps-4">
+                  <div style="width: 56px; height: 56px; border-radius: 16px; background-color: #ba9d79; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-house-user" style="font-size: 26px; color: white;"></i></div>
+                  <div class="position-relative my-4">
+                    <div class="position-absolute top-0 start-0 py-3 ms-n4 border-2 border-start border-primary"></div>
+                    <h5 class="display-3 fw-bold">Libertad para elegir</h5>
+                  </div>
+                  <p class="text-light-dark">Podés seleccionar el modelo que mejor se adapte a tu estilo de vida y necesidades familiares.</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mb-12 mb-lg-24">
+                <div class="ps-4">
+                  <div style="width: 56px; height: 56px; border-radius: 16px; background-color: #ba9d79; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-house-user" style="font-size: 26px; color: white;"></i></div>
+                  <div class="position-relative my-4">
+                    <div class="position-absolute top-0 start-0 py-3 ms-n4 border-2 border-start border-primary"></div>
+                    <h5 class="mb-0 display-3 fw-bold">Flexibilidad a futuro</h5>
+                  </div>
+                  <p class="text-light-dark">Ya sea que tu familia crezca o tus planes cambien, hay un modelo que acompaña cada etapa de tu vida.</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mb-12 mb-sm-0">
+                <div class="ps-4">
+                  <div style="width: 56px; height: 56px; border-radius: 16px; background-color: #ba9d79; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-house-user" style="font-size: 26px; color: white;"></i></div>
+                  <div class="position-relative my-4">
+                    <div class="position-absolute top-0 start-0 py-3 ms-n4 border-2 border-start border-primary"></div>
+                    <h5 class="mb-0 display-3 fw-bold">Optimización del espacio</h5>
+                  </div>
+                  <p class="text-light-dark">Nuevos modelos pensados en aprovechar al máximo cada espacio de tu nueva casa.</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="ps-4">
+                  <div style="width: 56px; height: 56px; border-radius: 16px; background-color: #ba9d79; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-house-user" style="font-size: 26px; color: white;"></i></div>
+                  <div class="position-relative my-4">
+                    <div class="position-absolute top-0 start-0 py-3 ms-n4 border-2 border-start border-primary"></div>
+                    <h5 class="display-3 fw-bold">Decisión</h5>
+                  </div>
+                  <p class="text-light-dark">Comparar las opciones te permite tomar la mejor decisión sin comprometer tus preferencias ni tu presupuesto.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 py-md-16 py-lg-24">
+        <div class="container">
+          <div class="mw-6xl mx-auto">
+            <div class="mw-md mw-lg-xl mx-auto mb-20 text-center">
+              <h3 class="font-heading mb-4">Así es como tu hogar cobra vida</h3>
+              <p class="text-light-dark mb-0">Te guiamos paso a paso, eligiendo cada detalle junto a vos. Para que tu hogar sea exactamente como lo imaginás.</p>
+            </div>
+            <div class="mw-xl mw-lg-5xl mx-auto pt-12 bg-primary-light rounded-3 overflow-hidden">
+              <div class="row">
+                <div class="col-12 col-lg-6 mb-lg-0">
+                  <div class="px-8 pb-16 mw-lg mx-auto">
+                    <div class="p-6 border-bottom border-info">
+                      <div class="d-flex"><span class="d-inline-block mt-n1"><i class="fa-regular fa-comments" style="font-size: 24px; color: #ba9d79;"></i></span>
+                        <div class="ms-3">
+                          <h6 class="mb-3">Asesoramiento personalizado</h6>
+                          <p class="text-light-dark mb-0">Te ayudamos a elegir el modelo que mejor se adapte a tu nuevo estilo de vida.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-6 border-bottom border-primary">
+                      <div class="d-flex"><span class="d-inline-block mt-n1"><i class="fa-regular fa-heart" style="font-size: 24px; color: #ba9d79;"></i></span>
+                        <div class="ms-3">
+                          <h6 class="mb-3">Personalización a tu gusto</h6>
+                          <p class="text-light-dark mb-0">Elegí cada detalle para que tu casa se sienta verdaderamente tuya.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-6 border-bottom border-info">
+                      <div class="d-flex"><span class="d-inline-block mt-n1"><i class="fa-regular fa-face-smile" style="font-size: 24px; color: #ba9d79;"></i></span>
+                        <div class="ms-3">
+                          <h6 class="mb-3">Construcción y acompañamiento continuo</h6>
+                          <p class="text-light-dark mb-0">Estamos a tu lado en cada paso, desde el inicio hasta el momento de abrir la puerta de tu nuevo hogar.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="d-flex h-100 ps-0 ps-lg-10 align-items-end justify-content-center justify-content-lg-end mt-4 mt-lg-0"><img class="img-fluid d-block" style="object-fit: contain;" src="tu-hogar/images/asesoramiento/inicio-asesoramiento.png" alt=""/></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 py-md-16 py-lg-24 detalles-section">
+        <div class="container">
+          <h3 class="font-heading text-center mb-12 mb-md-24">Detalles que cuentan</h3>
+          <div class="mw-5xl mx-auto">
+            <div class="carousel slide d-block d-md-none mb-4" id="carouselDetalles" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="tu-hogar/images/detalles/detalle-05.png" alt="Detalle 5"/></div>
+                <div class="carousel-item"><img class="d-block w-100 img-fluid" src="tu-hogar/images/detalles/detalle-04.png" alt="Detalle 4"/></div>
+                <div class="carousel-item"><img class="d-block w-100 img-fluid" src="tu-hogar/images/detalles/detalle-03.png" alt="Detalle 3"/></div>
+                <div class="carousel-item"><img class="d-block w-100 img-fluid" src="tu-hogar/images/detalles/detalle-02.png" alt="Detalle 2"/></div>
+                <div class="carousel-item"><img class="d-block w-100 img-fluid" src="tu-hogar/images/detalles/detalle-01.png" alt="Detalle 1"/></div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselDetalles" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselDetalles" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+              <div class="carousel-indicators">
+                <button class="active" type="button" data-bs-target="#carouselDetalles" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselDetalles" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselDetalles" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselDetalles" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselDetalles" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+            </div>
+            <div class="row mx-n2 mb-n4 detalles-grid d-none d-md-flex">
+              <div class="col-md-7 mb-4 px-2"><img class="img-fluid w-100" src="tu-hogar/images/detalles/detalle-01.png" alt=""/></div>
+              <div class="col-md-5 mb-4 px-2"><img class="img-fluid w-100" src="tu-hogar/images/detalles/detalle-02.png" alt=""/></div>
+              <div class="col-md-3 mb-4 px-2"><img class="img-fluid w-100" src="tu-hogar/images/detalles/detalle-03.png" alt=""/></div>
+              <div class="col-md-5 mb-4 px-2"><img class="img-fluid w-100" src="tu-hogar/images/detalles/detalle-04.png" alt=""/></div>
+              <div class="col-md-4 mb-4 px-2"><img class="img-fluid w-100" src="tu-hogar/images/detalles/detalle-05.png" alt=""/></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 py-md-16 py-lg-24" id="contacto">
+        <div class="container">
+          <div class="mw-lg mw-lg-6xl mx-auto">
+            <div class="row">
+              <div class="col-12 col-lg-5 col-xl-6 mb-12 mb-lg-0">
+                <div class="mw-sm mw-xl-md d-flex flex-column align-items-start h-100">
+                  <h3 class="font-heading mb-4">Estamos para asesorarte</h3>
+                  <p class="text-light-dark mb-6 mb-md-10">Dejanos tu mensaje y te responderemos a la brevedad</p>
+                  <div class="mw-sm mt-auto p-6 p-md-8 bg-secondary rounded-2 d-none d-md-block">
+                    <p class="display-3 fw-semibold text-white mb-4 mb-md-6">Cada paso más cerca de TU HOGAR</p><a class="d-inline-flex align-items-center justify-content-center px-4 py-3 rounded-3 bg-white text-secondary shadow-sm text-decoration-none"><i class="fa-solid fa-house"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-7 col-xl-6">
+                <div class="p-4 p-md-8 border border-light rounded-3">
+                  <div class="alert d-none mb-4" id="mensaje-envio" role="alert"></div>
+                  <form id="formulario-contacto" action="">
+                    <div class="row">
+                      <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-label" for="nombre">Nombre</label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" required="required"/>
+                      </div>
+                      <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-label" for="apellido">Apellido</label>
+                        <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Apellido" required="required"/>
+                      </div>
+                      <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="tunombre@email.com" required="required"/>
+                      </div>
+                      <div class="col-12 col-lg-6 mb-4">
+                        <label class="form-label" for="telefono">Teléfono</label>
+                        <div class="input-group mb-3">
+                          <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="(3564) 234569"/>
+                        </div>
+                      </div>
+                      <div class="col-12 mb-8">
+                        <label class="form-label" for="mensaje">Mensaje</label>
+                        <textarea class="form-control rounded-2" style="resize: none;" id="mensaje" name="mensaje" rows="8" placeholder="Dejanos tu mensaje" required="required"></textarea>
+                      </div>
+                      <div class="col-12">
+                        <button class="btn py-4 btn-primary w-100" type="submit" id="btn-enviar">Enviar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 py-md-16 py-lg-24 d-none d-md-block">
+        <div class="container">
+          <div class="mw-5xl mx-auto py-8 py-md-20 px-4 px-md-8 bg-primary rounded-3">
+            <div class="mw-lg mw-xl-2xl mx-auto text-center">
+              <div class="mb-3 mb-md-6"><i class="fa-solid fa-house d-none d-md-inline-block" style="font-size: 60px; color: white;"></i></div>
+              <h3 class="font-heading mb-3 mb-md-6 text-white fs-4 fs-md-3">¿Listo para encontrar tu hogar ideal?</h3>
+              <p class="text-primary-light mb-4 mb-md-10 px-2 fs-6 fs-md-5">Dejanos tu mensaje y descubrí cómo hacer realidad tu nuevo hogar.</p>
+              <div class="d-inline-block bg-white rounded-pill"><a class="btn btn-outline-light text-dark" href="#" id="whatsapp-cta" target="_blank">¡Si, quiero!</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-6 py-md-12 pt-lg-24 pb-20 pb-md-12" style="display: block !important; visibility: visible !important; min-height: auto !important; position: relative; z-index: 1;">
+        <div class="container">
+          <div class="text-center">
+            <p class="text-light-dark small mb-0">Portal del Sol 2026</p>
+          </div>
+        </div>
+      </section><a class="position-fixed bottom-0 end-0 m-4 p-3 rounded-circle bg-success text-white shadow-lg text-decoration-none" id="whatsapp-float" href="#" target="_blank" style="z-index: 1000; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><i class="bi bi-whatsapp fs-4"></i></a>
+    </div>
+    <script>
+      const navbar = document.querySelector('.navbar-scroll');
+      
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+              navbar.classList.add('scrolled');
+          } else {
+              navbar.classList.remove('scrolled');
+          }
+      });
+    </script>
+    <script>
+      // Inicializar EmailJS
+      (function() {
+          emailjs.init('8Mp8GIHkIf_7vHYJj'); // Reemplazar con tu Public Key de EmailJS
+      })();
+      
+      // Manejar el envío del formulario
+      document.getElementById('formulario-contacto').addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const btnEnviar = document.getElementById('btn-enviar');
+          const mensajeEnvio = document.getElementById('mensaje-envio');
+          const formData = {
+              nombre: document.getElementById('nombre').value,
+              apellido: document.getElementById('apellido').value,
+              email: document.getElementById('email').value,
+              telefono: document.getElementById('telefono').value,
+              mensaje: document.getElementById('mensaje').value,
+              to_email: 'gcomercial@inmobiliariaportaldelsol.com'
+          };
+      
+          // Deshabilitar botón mientras se envía
+          btnEnviar.disabled = true;
+          btnEnviar.textContent = 'Enviando...';
+          mensajeEnvio.classList.add('d-none');
+      
+          // Enviar correo usando EmailJS
+          emailjs.send('service_b5zp3ws', 'template_1oup7b8', formData)
+              .then(function(response) {
+                  // Éxito
+                  mensajeEnvio.classList.remove('d-none', 'alert-danger');
+                  mensajeEnvio.classList.add('alert-success');
+                  mensajeEnvio.textContent = '¡Mensaje enviado con éxito! Te responderemos a la brevedad.';
+                  document.getElementById('formulario-contacto').reset();
+                  btnEnviar.disabled = false;
+                  btnEnviar.textContent = 'Enviar';
+                  
+                  // Scroll al mensaje
+                  mensajeEnvio.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, function(error) {
+                  // Error
+                  mensajeEnvio.classList.remove('d-none', 'alert-success');
+                  mensajeEnvio.classList.add('alert-danger');
+                  mensajeEnvio.textContent = 'Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.';
+                  btnEnviar.disabled = false;
+                  btnEnviar.textContent = 'Enviar';
+                  
+                  // Scroll al mensaje
+                  mensajeEnvio.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              });
+      });
+      
+      // Configuración de WhatsApp
+      const WHATSAPP_NUMBER = '5493564608853'; // Reemplazar con el número real (sin + ni espacios, ej: 5491112345678)
+      const WHATSAPP_MENSAJE_INICIAL = encodeURIComponent('Hola, me interesa obtener más información sobre estos modelos de casas');
+      
+      // Actualizar enlaces de WhatsApp
+      document.addEventListener('DOMContentLoaded', function() {
+          const botonFloat = document.getElementById('whatsapp-float');
+          const botonCTA = document.getElementById('whatsapp-cta');
+          
+          if (botonFloat) {
+              botonFloat.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MENSAJE_INICIAL}`;
+          }
+          if (botonCTA) {
+              botonCTA.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MENSAJE_INICIAL}`;
+          }
+      });
+    </script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
