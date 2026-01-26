@@ -37,4 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    document.addEventListener('click', function (e) {
+    if (e.target.closest('.section-models a')) {
+        e.stopPropagation();
+    }
+}, true);
+
 });
