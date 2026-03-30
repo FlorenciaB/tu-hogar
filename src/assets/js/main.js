@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    document.addEventListener('click', function (e) {
-    if (e.target.closest('.section-models a')) {
-        e.stopPropagation();
-    }
-}, true);
-
+    // Evitar que el fondo se scrollee cuando haya un modal abierto (especialmente en mobile)
+    document.addEventListener('shown.bs.modal', function () {
+        document.documentElement.classList.add('modal-open');
+    });
+    document.addEventListener('hidden.bs.modal', function () {
+        document.documentElement.classList.remove('modal-open');
+    });
 });

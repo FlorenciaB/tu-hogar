@@ -129,6 +129,24 @@ html(lang="es")
                     opacity: 1 !important;
                 }
             }
+
+            /* Modal Modelo 1: ancho más angosto en mobile y sin scroll de fondo */
+            @media (max-width: 575px) {
+                #modalModelo1 .modal-dialog {
+                    max-width: 90%;
+                    margin: 1.5rem auto;
+                }
+            }
+
+            body.modal-open {
+                overflow: hidden !important; /* evitar scroll del fondo cuando el modal está abierto */
+            }
+
+            html.modal-open {
+                overflow: hidden !important;
+                height: 100%;
+                touch-action: none; /* evita scroll/arrastre de fondo en mobile */
+            }
     body
         div(class="")
         
@@ -171,7 +189,7 @@ html(lang="es")
             //- ---------------------------------------------------------------------------------------------------------
             section(id="modelos" class="py-12 py-md-16 py-lg-24 overflow-hidden")
                 div(class="mw-md mw-lg-xl mx-auto mb-20 text-center")
-                    h3(class="font-heading mb-4") Nuevos modelos
+                    h3(class="font-heading mb-4") Modelos exclusivos
                     p(class="text-light-dark mb-0") Con cuatro modelos versátiles, donde la ubicación, el diseño y la calidad se unen para que vivas a tu manera.
                 div(class="d-flex flex-wrap justify-content-center gap-3 gap-md-4")
                     div(class="bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px; min-width: 260px;")
@@ -179,8 +197,8 @@ html(lang="es")
                              img(class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-01.png" alt="")
                              img(class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-01.png" alt="")
                         h5(class="text-center mb-0 display-4 fw-bold") Modelo 01
-                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/modelo1/index.htm" target="_blank") Tour virtual
-                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Guatemala_2100.pdf" target="_blank") Más info
+                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/vivienda1/index.htm" target="_blank") Tour virtual
+                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="#" data-bs-toggle="modal" data-bs-target="#modalModelo1") Más info
                         a(class="btn btn-sm mt-n3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://www.google.com/maps/d/viewer?mid=1z7MihDF-MQwnbaDVc32sl8N_t361C94" target="_blank") Ubicación
                     
                     div(class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px")
@@ -188,8 +206,8 @@ html(lang="es")
                              img(class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-02.png" alt="")
                              img(class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-02.png" alt="")
                         h5(class="text-center mb-0 display-4 fw-bold") Modelo 02
-                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/modelo2/index.htm" target="_blank") Tour virtual
-                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Calle_Publica_1734-40.pdf" target="_blank") Más info
+                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/vivienda2/index.htm" target="_blank") Tour virtual
+                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="#" data-bs-toggle="modal" data-bs-target="#modalModelo2") Más info
                         a(class="btn btn-sm mt-n3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://www.google.com/maps/d/viewer?mid=1z7MihDF-MQwnbaDVc32sl8N_t361C94" target="_blank") Ubicación
                    
                     div(class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px")
@@ -197,8 +215,8 @@ html(lang="es")
                              img(class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-03.png" alt="")
                              img(class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-03.png" alt="")
                         h5(class="text-center mb-0 display-4 fw-bold") Modelo 03
-                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/modelo3/index.htm" target="_blank") Tour virtual
-                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_Fanny_Jacovsky_3642-54.pdf" target="_blank") Más info
+                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/vivienda3/index.htm" target="_blank") Tour virtual
+                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="#" data-bs-toggle="modal" data-bs-target="#modalModelo3") Más info
                         a(class="btn btn-sm mt-n3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://maps.app.goo.gl/m2dZ3pAzEpeRJ8a79" target="_blank") Ubicación
                     
                     div(class="mx-4 bg-light-light bg-opacity-50 rounded-2 overflow-hidden text-center" style="flex: 1 1 260px; max-width: 300px")
@@ -206,11 +224,90 @@ html(lang="es")
                              img(class="img-fluid w-100 img-base d-none d-md-block" src="tu-hogar/images/logos-casas/logo-imagen-casa-sin-nombre-04.png" alt="")
                              img(class="img-fluid w-100 img-hovered" src="tu-hogar/images/logos-casas/logo-imagen-casa-04.png" alt="")
                         h5(class="text-center mb-0 display-4 fw-bold") Modelo 04
-                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/modelo4/index.htm" target="_blank") Tour virtual
-                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/Casa_José_Lencinas_220-24.pdf" target="_blank") Más info
+                        a(class="btn btn-sm mt-3 mb-6 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://umbrality.tech/360/portaldelsol/vivienda4/index.htm" target="_blank") Tour virtual
+                        a(class="btn btn-sm mt-3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="tu-hogar/pdf-info-casas/MODELO_4_José_Lencinas_220.pdf" target="_blank") Más info
                         a(class="btn btn-sm mt-n3 mb-6 ms-3 py-3 px-4 btn-outline-light text-dark fw-semibold shadow" href="https://maps.app.goo.gl/4KqvEtwwqCVeNawB9" target="_blank") Ubicación                   
-            
-            
+           
+
+            //- Modal Más info Modelo 01
+            div(class="modal fade" id="modalModelo1" tabindex="-1" aria-labelledby="modalModelo1Label" aria-hidden="true")
+                div(class="modal-dialog modal-dialog-centered modal-lg")
+                    div(class="modal-content")
+                        div(class="modal-header border-0")
+                            h5(class="modal-title w-100 display-4 fw-bold text-center" id="modalModelo1Label") Modelo 1 – Elegí dónde vivirlo
+                            button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+                        div(class="modal-body")
+                            div(class="row g-3 text-center")
+                                //- Box Modelo 1 - Guatemala 2120
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 1 - Guatemala 2120
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_1_Guatemala_2120.pdf" target="_blank") Más info
+                                //- Box Modelo 3 - San Luis 1733
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 1 - Guatemala Norte 2100
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_1_Guatemala_Norte_2100.pdf" target="_blank") Más info
+                               
+            //- Modal Más info Modelo 02
+            div(class="modal fade" id="modalModelo2" tabindex="-1" aria-labelledby="modalModelo2Label" aria-hidden="true")
+                div(class="modal-dialog modal-dialog-centered modal-lg")
+                    div(class="modal-content")
+                        div(class="modal-header border-0")
+                            h5(class="modal-title w-100 display-4 fw-bold text-center" id="modalModelo2Label") Modelo 2 – Elegí dónde vivirlo
+                            button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+                        div(class="modal-body")
+                            div(class="row g-3 text-center")
+                                //- Box Modelo 2 - Calle Pública 1734
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 2 - Calle Pública 1734
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_2_Calle_Publica_1734.pdf" target="_blank") Más info
+                                //- Box Modelo 2 - España 2130
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 2 - España 2130
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_2_España_2130.pdf" target="_blank") Más info
+                               
+
+            //- Modal Más info Modelo 03
+            div(class="modal fade" id="modalModelo3" tabindex="-1" aria-labelledby="modalModelo3Label" aria-hidden="true")
+                div(class="modal-dialog modal-dialog-centered modal-lg")
+                    div(class="modal-content")
+                        div(class="modal-header border-0")
+                            h5(class="modal-title w-100 display-4 fw-bold text-center" id="modalModelo3Label") Modelo 3 – Elegí dónde vivirlo
+                            button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+                        div(class="modal-body")
+                            div(class="row g-3 text-center")
+                                //- Box Modelo 3 - Fanny Jacovsky 3642
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 3 - Fanny Jacovsky 3642
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_3_Fanny_Jacovsky_3642.pdf" target="_blank") Más info
+                                //- Box Modelo 3 - San Luis 1733
+                                div(class="col-12 col-md-6")
+                                    div(class="bg-light-light bg-opacity-50 rounded-3 p-4 shadow-sm h-100 d-flex flex-column align-items-center")
+                                        h5(class="mb-3 display-6 fw-bold text-dark") Modelo 3 - San Luis 1733
+                                        ul(class="list-unstyled text-start mb-4 small text-muted")
+                                            li • 2 dormitorios
+                                            li • Cochera doble
+                                        a(class="btn btn-sm mt-auto py-3 px-4 btn-outline-light text-dark fw-semibold shadow rounded-pill" href="tu-hogar/pdf-info-casas/MODELO_3_San_Luis_1733.pdf" target="_blank") Más info
+                               
             //- ---------------------------------------------------------------------------------------------------------
             //- SECCION DE  TU HOGAR, TU ESTILO
             //- ---------------------------------------------------------------------------------------------------------
